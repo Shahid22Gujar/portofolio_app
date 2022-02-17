@@ -1,0 +1,52 @@
+/*  Font */
+
+.st-font {
+    font-family: 'Satisfy', cursive;
+}
+
+html,
+body {
+    height: 100%;
+}
+
+.container-fluid {
+    min-height: 100%;
+}
+
+
+/* service icon color */
+
+.i-color {
+    color: chartreuse;
+}
+
+
+/* Service Subtitle color */
+
+.ss-color {
+    color: whitesmoke;
+}
+
+
+/* changing color of navbar */
+
+a.nav-link {
+    color: whitesmoke;
+}
+
+
+/* changing color on hovering i.e bringing mouse */
+
+a.nav-link:hover {
+    color: black;
+    background-color: #e9cd79;
+}
+
+
+/* Changig color on active of particular page */
+
+a.nav-link.active {
+    color: black;
+    background-color: #ffc107;
+    font-weight: bold;
+}

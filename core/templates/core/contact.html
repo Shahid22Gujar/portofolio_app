@@ -1,0 +1,90 @@
+{% extends "core/base.html" %} {% block title %} Contact {% endblock title %} {% block content %}
+<script>
+    function check_name() {
+        var f = document.frm.fname.value;
+        var reg = "/^[A-Za-z]+$"
+        if (f.trim() == "") {
+            document.getElementById("error").innerHTML = "Please enter your first name";
+        }
+    }
+</script>
+<div class="container mt-5">
+    <h1 class="text-warning mb-5 border-bottom">Contact Us</h1>
+    <div class="row text-white mb-5">
+
+        <p class="max-atuo mb-5">
+            {% for message in messages %}
+            <div class="alert alert-success alert-dismissible fade show" role="alert">
+                <strong>Thanks for reaching us!</strong> <br> We will contact very soon!.
+                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+            </div>
+            {% endfor %} Do you have any question,please donot hesitate to ask any question. <br>I will come back to you within matter of hours to help you.
+        </p>
+
+        <div class="col-sm-9 mb-5">
+            <form action="" method="Post">
+                {% csrf_token %}
+                <div class="row">
+                    <div class="col">
+                        <input type="text" onblur="check_name();" name="fname" class="form-control" placeholder="First name">
+                        <span id="error"></span>
+                    </div>
+                    <div class="col">
+                        <input type="text" name="lname" class="form-control" placeholder="Last name">
+                    </div>
+
+
+                </div>
+                <div class="form-group">
+                    <label for="exampleFormControlInput1">Email address</label>
+                    <input type="email" name="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com">
+                </div>
+                <div class="form-group">
+                    <label for="exampleFormControlTextarea1"> Textarea</label>
+                    <textarea class="form-control" name="textfield" id="exampleFormControlTextarea1" rows="3"></textarea>
+                </div>
+                <button type="submit" class="btn btn-primary">Send</button>
+            </form>
+
+        </div>
+
+        <div class="col-sm-3 text-center mb-5 ">
+            <ul class="list-unstyled">
+                <li>
+                    <i class="fas fa-map-marker-alt mt-4 fa-2x i-color"></i>
+                    <p>Puraina,Udharapur,Khajura</p>
+
+                </li>
+                <li>
+                    <i class="fas fa-phone-alt mt-4 fa-2x i-color"></i>
+                    <p>+919116240211</p>
+
+
+                </li>
+                <li>
+
+                    <i class="fab fa-whatsapp-square fa-3x i-color"></i>
+                    <p>+919116240211</p>
+
+                </li>
+                <li>
+                    <i class="fas fa-envelope mt-4 fa-3x i-color"></i>
+                    <p>shahidahimadgujar86@gmail.com</p>
+                </li>
+            </ul>
+        </div>
+
+    </div>
+    <div class="text-center">
+        <a href="#" target="_blank"><i class="fab fa-twitter i-color mr-3"></i></a>
+        <a href="#" target="_blank"><i class="fab fa-facebook i-color mr-3"></i></a>
+        <a href="#" target="_blank"><i class="fab fa-instagram i-color mr-3"></i></a>
+        <a href="#" target="_blank"><i class="fab fa-linkedin i-color mr-3"></i></a>
+    </div>
+
+</div>
+
+
+{% endblock content %}
